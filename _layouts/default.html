@@ -44,78 +44,15 @@
                 {% include service.html %}
         
                 {% include partners.html %}
-
-<!-- 
-                <div class="topic" id="partners">
-                    <div class="c">
-                        <h2>Partners</h2>
-        
-                        <div class="grid-partner">
-                            <img class="cell-partner" src="../../resources/images/partners/Outsystems.png" title="OutSystems"/>
-                            <img class="cell-partner" src="../../resources/images/partners/NTT Data.jpg" title="Ntt Data" />
-                            <img class="cell-partner" src="../../resources/images/partners/Deloitte.jpg" title="Deloitte"/>
-                            <img class="cell-partner" src="../../resources/images/partners/Indorama.jpg" title="Indorama"/>
-                            <img class="cell-partner" src="../../resources/images/partners/Charles River Labs.jpg" title="Charles River Labs" />
-                        </div>
-                    </div>
-                </div> -->
-        
-                <div class="topic" id="aboutus">
-                    <div class="c">
-                        <h2>About Us</h2>
-                        <p>
-                            We are focused on delivering value to your business. We believe in powerful, strategic applications that will distinguish you from your competitors while making your business more successful and valuable. Our a team of professionals have achieved the highest certification levels in technology and development methodology. This enables us to deliver consistently on time, on budget and above all with strong user adoption.
-                        </p>
-                    </div>
-                </div>
-        
-                <div class="topic" id="contacts">
-                    <div class="c">
-                        <h2>Contact Us</h2>
-                        <ul class="c2">
-                            <li>
-                                <div>
-                                    <h5>We are @</h5>
-                                    <p>
-                                        Rua Diogo Cão, 34<br />
-                                        3080-318 Figueira da Foz<br />
-                                        Portugal
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <h5>Contact Information</h5>
-                                    <p>
-                                        +351.233.094.915<br />
-                                        Email us at <a href="mailto:info@itglee.com">info@itglee.com</a>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-        
+                
+                {% include about_us.html %}
+                
+                {% include contact_us.html %}
+                
+                
             </div>
         
-            <footer>
-                <div class="c center">
-                    <h4>We're hiring developers!</h4>
-                    <p>So just send us an&nbsp;<a href="mailto:info@itglee.com" target="_blank">e-mail</a> with your life story :)</p>
-                </div>
-                <div class="m10"></div>
-                <div class="c center">
-                    {% for social in site.socials %}
-                        <a href="{{ social.href }}" target="_blank" title="{{ social.title }}">
-                            <img src="{{ social.imgUrl }}" />
-                        </a>
-                    {% endfor %}
-                </div>
-                <div style="clear: both"></div>
-                <div class="copyright">
-                    2016 © <a href="http://www.itglee.com" target="_blank">itGlee, Lda.</a>All Rights Reserved
-                </div>
-            </footer>
+            {% include footer.html %}
         
             <script type="text/javascript">
                 (function () {

@@ -720,3 +720,12 @@ footer {
     padding-right:15px;
     min-width: 45%;
 }
+
+/* Small screen sizes */
+@media only screen and (max-width: 800px) {
+    .services-flex-row-item {
+        flex-basis: 50%;
+        padding-right:15px;
+        min-width: 100%;
+    }
+}

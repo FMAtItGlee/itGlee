@@ -1,0 +1,18 @@
+<footer>
+    <div class="c center">
+        <h4>We're hiring developers!</h4>
+        <p>So just send us an&nbsp;<a href="mailto: {{ site.email }}" target="_blank">e-mail</a> with your life story :)</p>
+    </div>
+    <div class="m10"></div>
+    <div class="c center">
+        {% for social in site.socials %}
+            <a href="{{ social.href }}" target="_blank" title="{{ social.title }}">
+                <img src="{{ social.imgUrl }}" />
+            </a>
+        {% endfor %}
+    </div>
+    <div style="clear: both"></div>
+    <div class="copyright">
+        2016 © <a href="{{ site.site }}" target="_blank">itGlee, Lda.</a>All Rights Reserved
+    </div>
+</footer>

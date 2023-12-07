@@ -10,7 +10,7 @@ function moveNavigation() {
     var navigation = document.querySelector('nav.cd-main-nav-wrapper');
     var isDeviceMobile = isMobile();
     if (!isDeviceMobile) {
-        navigation.parentNode.insertBefore(navigation, document.querySelector('a.cd-nav-trigger'));
+        document.querySelector('header.header-menu').insertBefore(navigation, null);
     } else {
         document.getElementById("main").insertBefore(navigation, document.querySelector('div.cd-main-content').nextElementSibling);
     }
