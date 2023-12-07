@@ -1,0 +1,11 @@
+{% assign sorted = site.partners | sort: 'order' %}
+<div class="topic" id="partners">
+    <div class="c">
+        <h2>Partners</h2>
+        <div class="grid-partner">
+            {% for item in sorted %}
+                <a href= "{{ item.href }}" title="{{ item.title }}"><img class="cell-partner" src="{{ item.imgUrl }}" title="OutSystems"/></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

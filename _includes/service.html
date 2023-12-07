@@ -1,0 +1,14 @@
+{% assign sorted = site.services | sort: 'order' %}
+<div class="topic services-grid" id="services">
+    <div class="c">
+        <h2>Services</h2>
+            <div class="services-flex-row">
+                {% for item in sorted %}
+                    <div class="services-flex-row-item">
+                        <h4>{{ item.header }}</h4>
+                        <p>{{ item.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
