@@ -1,0 +1,12 @@
+{% assign sorted = site.menuitems | sort: 'order' %}
+<nav class="cd-main-nav-wrapper">
+    <ul class="cd-main-nav">
+        {% for item in sorted %}
+        {% if page.layout == "default" %}
+        <li><a href="{{item.link}}" class="{{ item.class }}">{{item.title}}</a></li>
+        {% else %}
+        <li><a href="{{item.externallink}}" class="{{ item.class }} {{item.classactive}}">{{item.title}}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

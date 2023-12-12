@@ -38,18 +38,20 @@ function initNav() {
         (!window.requestAnimationFrame) ? setTimeout(moveNavigation, 300) : window.requestAnimationFrame(moveNavigation);
     });
 
-    document.querySelector("div.cd-logo").addEventListener("click", function (e) {
-        e.preventDefault();
-        let mainDiv = document.querySelector("div#main");
-        mainDiv.scrollIntoView({ behavior: 'smooth' });
-    });
+    // document.querySelector("div.cd-logo").addEventListener("click", function (e) {
+    //     e.preventDefault();
+    //     let mainDiv = document.querySelector("div#main");
+    //     mainDiv.scrollIntoView({ behavior: 'smooth' });
+    // });
 
-    var myAnchors = document.querySelectorAll("a.menu-link");
+    var myAnchors = document.querySelectorAll("a.menu-link:not(.link-navigation)");
     for (var i = 0; i < myAnchors.length; i++) {
         myAnchors[i].addEventListener("click",
             function (event) {
                 event.preventDefault();
                 scrollSmoothToElement(document.querySelector(this.getAttribute("href")));
+                myAnchors.forEach((elem) => { if (elem.classList.contains("active")) elem.classList.toggle("active"); })
+                this.classList.toggle("active")
             },
             false);
     }
@@ -57,9 +59,26 @@ function initNav() {
     Array.prototype.forEach.call(document.getElementsByClassName("cd-nav-trigger"), (elem) => {
         elem.addEventListener("click", function (e) {
             e.preventDefault();
-            Array.prototype.forEach.call(document.querySelectorAll("header.header-menu, .cd-main-content, footer, .cd-main-nav"), function  (elem,index, list) {
+            Array.prototype.forEach.call(document.querySelectorAll("header.header-menu, .cd-main-content, footer, .cd-main-nav"), function (elem, index, list) {
                 elem.classList.toggle("nav-is-visible");
             });
         })
     });
+}
+
+function initJobCards() {
+    Array.prototype.forEach.call(document.querySelectorAll(".job-card"), function (elem, index) {
+        elem.addEventListener("click", function () {
+            this.preventDefault();
+
+        })
+    })
+}
+
+
+function setupForm() {
+    var form = document.getElementById("itglee-form");
+    let params = new URLSearchParams(document.location.search);
+    let jobid = params.get('JOB');
+    form.setAttribute("data-value", jobid);
 }
