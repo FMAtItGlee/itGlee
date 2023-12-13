@@ -1,5 +1,5 @@
 ---
 layout: careers
-title: itGlee carriers
+title: itGlee carreers
 author: itglee.com
 ---

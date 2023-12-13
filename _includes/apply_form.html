@@ -1,0 +1,29 @@
+<div id="apply">
+    <div class="c">
+        <form action="https://localhost:7230/Email/sendemail_v1" method="post" id="itglee-form" enctype="multipart/form-data">
+            <div id="form-error" class="form-error hidden"></div>
+            <div class="grid2">
+                <div class="col1"><label for="form-email">Email</label><input type="text" name="Email"
+                        id="form-email">
+                </div>
+                <div class="col1"><label for="form-name">Name</label><input type="text" name="Name" id="form-name">
+                </div>
+                <div class="col1"><Label for="form-position">Position</Label>
+                    <div class="form-input-look-a-like" id="form-position-placeholder"></div>
+                    <input type="text" name="Position" id="form-position" style="display:none">
+                </div>
+                <div>
+
+                    <div class="col2"><label for="form-description">Tell us about yourself</label><textarea
+                            name="Description" id="form-description" rows="5" cols="50"></textarea></div>
+                    <div class="col2"><label for="form-file">Select a file</label><input type="file" name="Files"
+                            id="form-file"
+                            accept=".docx,.doc,application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            multiple>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Apply</button>
+        </form>
+    </div>
+</div>

@@ -105,11 +105,6 @@ header .cd-main-nav-wrapper {
     transition: all 0.3s;
 }
 
-.active {
-    border-bottom: 3px solid #F05442;
-    height: 100%;
-}
-
 .cd-logo {
     display: inline-block;
     height: 100%;
@@ -921,4 +916,29 @@ div.c {
 
 .col2 {
     grid-column: span 2;
+}
+
+.form-input-look-a-like {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    background-color: white;
+    background-color: -moz-field;
+    border: 1px solid darkgray;
+    box-shadow: 1px 1px 1px 0 lightgray inset;
+    font: -moz-field;
+    font: -webkit-small-control;
+    margin-top: 5px;
+    padding: 2px 3px;
+    width: 398px;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-error {
+    border: 1px solid red;
+    padding: 5px;
+    background-color: lightcoral;
+    color: white;
 }

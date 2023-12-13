@@ -38,17 +38,12 @@ function initNav() {
         (!window.requestAnimationFrame) ? setTimeout(moveNavigation, 300) : window.requestAnimationFrame(moveNavigation);
     });
 
-    // document.querySelector("div.cd-logo").addEventListener("click", function (e) {
-    //     e.preventDefault();
-    //     let mainDiv = document.querySelector("div#main");
-    //     mainDiv.scrollIntoView({ behavior: 'smooth' });
-    // });
-
     var myAnchors = document.querySelectorAll("a.menu-link:not(.link-navigation)");
     for (var i = 0; i < myAnchors.length; i++) {
         myAnchors[i].addEventListener("click",
             function (event) {
                 event.preventDefault();
+                if (document.querySelector(this.getAttribute("href")) == undefined) window.location.href(this.getAttribute("href"));
                 scrollSmoothToElement(document.querySelector(this.getAttribute("href")));
                 myAnchors.forEach((elem) => { if (elem.classList.contains("active")) elem.classList.toggle("active"); })
                 this.classList.toggle("active")
@@ -68,17 +63,44 @@ function initNav() {
 
 function initJobCards() {
     Array.prototype.forEach.call(document.querySelectorAll(".job-card"), function (elem, index) {
-        elem.addEventListener("click", function () {
-            this.preventDefault();
-
+        elem.addEventListener("click", function (event) {
+            event.preventDefault();
+            window.location.href = '/apply.html?JOB=' + this.getAttribute("data-job-position");
         })
     })
 }
-
 
 function setupForm() {
     var form = document.getElementById("itglee-form");
     let params = new URLSearchParams(document.location.search);
     let jobid = params.get('JOB');
     form.setAttribute("data-value", jobid);
+    var position = document.getElementById("form-position");
+    var placeholder = document.getElementById("form-position-placeholder");
+    position.value = jobid;
+    placeholder.innerText = jobid;
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var errorcontainer = document.getElementById("form-error");
+        errorcontainer.classList.add("hidden");
+        errorcontainer.innerText = "";
+        fetch(event.target.action, {
+            method: form.method,
+            body: new FormData(event.target),
+            headers: {
+                'Accept': 'multipart/form-data'
+            }
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = "/careers.html"
+            }
+            else {
+                errorcontainer.innerText = "There was an error in your submission."
+                errorcontainer.classList.remove("hidden");
+            }
+        }).catch(error => {
+            errorcontainer.innerHTML = "Oops! There was a problem submitting your form"
+          })
+    })
 }

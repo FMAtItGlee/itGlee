@@ -4,13 +4,13 @@
 
 <body>
     <div id="main">
+        {% include header.html %}
         <div id="container" class="cd-main-content">
-            {% include header.html %}
             <div class="c">
                 {% assign sorted = site.openpositions | sort: 'order' %}
                 <ul>
                     {% for item in sorted %}
-                    <li class="job-card new featured">
+                    <li class="job-card new featured" data-job-position="{{ item.jobid }}">
                         <div class="job-card__info">
                             <div class="flex align-items-center">
                                 <div class="img-c"><img src="../resources/images/partners/Outsystems.png">

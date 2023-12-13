@@ -5,4 +5,5 @@ requirements:
 jobdescription: 
 skills: 
 jobposition: "Junior developer"
+jobid: JUNIOR
 ---
