@@ -96,11 +96,15 @@ function setupForm() {
                 window.location.href = "/careers.html"
             }
             else {
-                errorcontainer.innerText = "There was an error in your submission."
+                let error = response.json();
+                error.then(function (data) {
+                    errorcontainer.innerText = data.value;
+                });
+                //errorcontainer.innerText = "There was an error in your submission."
                 errorcontainer.classList.remove("hidden");
             }
         }).catch(error => {
             errorcontainer.innerHTML = "Oops! There was a problem submitting your form"
-          })
+        })
     })
 }
