@@ -43,7 +43,12 @@ function initNav() {
         myAnchors[i].addEventListener("click",
             function (event) {
                 event.preventDefault();
-                if (document.querySelector(this.getAttribute("href")) == undefined) window.location.href(this.getAttribute("href"));
+                try {
+                    document.createDocumentFragment().querySelector(this.getAttribute("href"));
+                }
+                catch (e) {
+                    window.location.href = this.getAttribute("href");
+                }
                 scrollSmoothToElement(document.querySelector(this.getAttribute("href")));
                 myAnchors.forEach((elem) => { if (elem.classList.contains("active")) elem.classList.toggle("active"); })
                 this.classList.toggle("active")
