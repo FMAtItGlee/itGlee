@@ -70,7 +70,7 @@ function initJobCards() {
     Array.prototype.forEach.call(document.querySelectorAll(".job-card"), function (elem, index) {
         elem.addEventListener("click", function (event) {
             event.preventDefault();
-            window.location.href = '/apply.html?JOB=' + this.getAttribute("data-job-position");
+            window.location.href = '/itGlee/apply.html?JOB=' + this.getAttribute("data-job-position");
         })
     })
 }
