@@ -24,7 +24,7 @@ site: https://www.itglee.com
 phone: (+351) 233 094 915
 address: Rua Diogo Cão, 34<br />3080-318 Figueira da Foz<br /> Portugal
 description: asdas
-baseurl: "" # the subpath of your site, e.g. /blog
+#baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 domain: fmatitglee.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com

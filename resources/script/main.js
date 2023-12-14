@@ -98,7 +98,7 @@ function setupForm() {
             }
         }).then(response => {
             if (response.ok) {
-                window.location.href = "/careers.html"
+                window.location.href = "/itGlee/careers.html"
             }
             else {
                 let error = response.json();
