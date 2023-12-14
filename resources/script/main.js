@@ -32,6 +32,7 @@ function scrollSmoothToElement(element, headerOffset) {
 }
 
 function initNav() {
+    alert("{{ site.baseURL }}");
     moveNavigation();
 
     window.addEventListener("resize", function () {
