@@ -32,7 +32,6 @@ function scrollSmoothToElement(element, headerOffset) {
 }
 
 function initNav() {
-    alert("{{ site.baseURL }}");
     moveNavigation();
 
     window.addEventListener("resize", function () {
@@ -48,7 +47,7 @@ function initNav() {
                     document.createDocumentFragment().querySelector(this.getAttribute("href"));
                 }
                 catch (e) {
-                    window.location.href = this.getAttribute("href");
+                    window.location.href = "/itGlee/"+this.getAttribute("href");
                 }
                 scrollSmoothToElement(document.querySelector(this.getAttribute("href")));
                 myAnchors.forEach((elem) => { if (elem.classList.contains("active")) elem.classList.toggle("active"); })
