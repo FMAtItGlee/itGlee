@@ -25,11 +25,11 @@ phone: (+351) 233 094 915
 address: Rua Diogo Cão, 34<br />3080-318 Figueira da Foz<br /> Portugal
 description: asdas
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-# domain: fmatitglee.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-# url: https://fmatitglee.github.io/itGlee  # the base hostname and protocol for your site, e.g. http://example.com
-# baseurl: /itGlee/      # place folder name if the site is served in a subfolder
+domain: fmatitglee.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://fmatitglee.github.io/itGlee  # the base hostname and protocol for your site, e.g. http://example.com
+baseurl: /itGlee/      # place folder name if the site is served in a subfolder
 formSpreeKey: mwkdgzvz
 
 apikey: u7oRbTSh9VE5fw29eRD4wbsUwo
