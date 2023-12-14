@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+    <div id="main">
+        {% include header.html %}
+        <div id="container" class="cd-main-content">
+            <div class="c">
+                {% assign sorted = site.openpositions | sort: 'order' %}
+                <ul>
+                    {% for item in sorted %}
+                    <li class="job-card new featured" data-job-position="{{ item.jobid }}">
+                        <div class="job-card__info">
+                            <div class="flex align-items-center">
+                                <div class="img-c"><img src="../resources/images/partners/Outsystems.png">
+                                </div>
+                                <div>
+                                    <div class="flex align-items-center color-primary">
+                                        <p>{{ item.jobposition }}</p>
+                                    </div>
+                                    <h6>{{ item.jobtitle }}</h6>
+                                    <ul>
+                                        <li>Full Time</li>
+                                        <li>Hybrid</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="job-card__tags">
+                            <li>OutSystems</li>
+                            <li>Senior</li>
+                            <li>Javascript</li>
+                            <li>CSS</li>
+                            <li>SQL Server</li>
+                        </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% include footer.html %}
+        <script type="text/javascript">
+            (function () {
+                initNav();
+                initJobCards();
+            })();
+        </script>
+    </div>
+</body>
+
+</html>

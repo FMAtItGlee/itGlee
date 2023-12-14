@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+    <div id="main">
+        {% include header.html %}
+        <div id="container" class="cd-main-content">
+            {% include apply_form.html %}
+        </div>
+
+        {% include footer.html %}
+
+        <script type="text/javascript">
+            (function () {
+                initNav();
+                setupForm();
+            })();
+        </script>
+    </div>
+</body>
+
+</html>
