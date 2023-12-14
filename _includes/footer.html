@@ -6,8 +6,8 @@
     <div class="m10"></div>
     <div class="c center">
         {% for social in site.socials %}
-            <a href="{{site.baseUrl}}{{ social.href }}" target="_blank" title="{{ social.title }}">
-                <img src="{{ social.imgUrl }}" />
+            <a href="{{ social.href }}" target="_blank" title="{{ social.title }}">
+                <img src="{{ site.baseUrl }}{{ social.imgUrl }}" />
             </a>
         {% endfor %}
     </div>
